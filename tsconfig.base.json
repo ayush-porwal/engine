@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@engine/my-graphql": ["libs/my-graphql/src/index.ts"],
+      "@engine/pulsar": ["libs/pulsar/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

@@ -10,6 +10,13 @@ services:
       POSTGRES_DB: engine-auth
     volumes:
       - postgres_data:/var/lib/postgresql/data
+  pulsar:
+    image: apachepulsar/pulsar:latest
+    container_name: pulsar
+    ports:
+      - '6650:6650'
+    command: >
+      /bin/bash -c "bin/pulsar standalone"
 
 volumes:
   postgres_data:

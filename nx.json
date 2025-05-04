@@ -37,7 +37,30 @@
       "options": {
         "targetName": "test"
       },
-      "exclude": ["apps/engine-auth-e2e/**/*"]
+      "exclude": [
+        "apps/engine-auth-e2e/**/*",
+        "apps/engine-jobs-e2e/**/*",
+        "apps/engine-executer-e2e/**/*"
+      ]
     }
-  ]
+  ],
+  "exclude": ["**/generated/**/*"],
+  "targetDefaults": {
+    "build": {
+      "inputs": [
+        "{projectRoot}/**/*",
+        "{workspaceRoot}/lib/**/*",
+        "{workspaceRoot}/proto/*"
+      ],
+      "options": {
+        "assets": [
+          {
+            "glob": "*.proto",
+            "input": "proto",
+            "output": "proto"
+          }
+        ]
+      }
+    }
+  }
 }
